@@ -1,0 +1,69 @@
+<!--ACTUAL USER PAGE-->
+
+<!DOCTYPE html>
+<html ng-app="Pam">
+    <head>
+        <title>Dashboard</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.css">
+            <link rel="stylesheet" href="/css/dashboard.css">
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+            <script src="/js/module.dashboard.js"></script>
+            <!--<script src="/controllers/api.js"></script>-->
+    </head>
+
+    <body ng-controller="DashboardController as dCtrl">
+
+    <!--NAV BAR-->
+        <header>
+            <nav class="navBar">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo center"></a>
+                        <ul id="nav-mobile" class="left hide-on-med-and-down">
+                            <li>
+                                <a href="/" class="waves-effect waves-light" id="navButtonHome">Home</a>
+                            </li>
+                            <!--<li>
+                                <a href="#profile" class="waves-effect waves-light" id="navButtonProfile">Profile</a>
+                            </li>-->
+                        </ul>
+                        <ul class="right hide-on-med-and-down">
+                            <li>
+                                <a href="/logout" class="waves-effect waves-light" id="navButtonLogout">Logout</a>
+                            </li>
+                        </ul>
+                </div>
+            </nav>
+        </header>
+
+    <!--CARD-->
+        <div class="row">
+            <div class="col s12 m6" id="taskCard">
+                <div class="card white darken-1">
+                    <div class="card-content black-text">
+                        <!--<p>Mongo UserID: <%= uid %></p>-->
+                        <div class="row">
+                            <div class="col s12">
+                            <ul class="tabs">
+                                <li class="tab col s3"><a class="active" href="#test1">New Task</a></li>
+                                <li class="tab col s3"><a href="#test2">In progress</a></li>
+                            </ul>
+                            </div>
+                            <div id="test1" class="col s12">
+                                <form ng-submit="dCtrl.sendCommand()">
+                                    <input type="text" placeholder="What would you like to do?" ng-model="dCtrl.command">
+                                    <button class="waves-effect waves-light btn-large" type="sumbit">Submit</button>
+                                </form>
+                            </div>
+                            <div id="test2" class="col s12">
+                                <strong>Soon™</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

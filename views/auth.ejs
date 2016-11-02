@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="module.auth">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.css">
+        <link rel="stylesheet" href="/css/auth.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.js"></script>
+        <script src="/js/module.auth.js"></script>
+    </head>
+    <body ng-controller="module.auth.controller as auth">
+        <p class="center">
+            <a class="waves-effect waves-light btn-large" id="mainHomeButton" href="/">Home</a>
+        </p>
+<!-- Nav tabs -->
+
+    <div class="row" id="authCard">
+        <div class="col s12 m5" id="authCard2">
+            <div class="card-panel white">
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="tabs">
+                            <li class="tab col s3"><a href="#test1">Login</a></li>
+                            <li class="tab col s3"><a href="#test2">Register</a></li>
+                        </ul>
+                    </div>
+
+            <!--Login view-->
+                <div id="test1" class="col s12">
+                    <div id="login" role="tabpanel" class="tab-pane">
+                        <form ng-submit="auth.login.submit($event)">
+                            <h1>Login</h1>
+                                    <div class="input-field">
+                                        <input id="email" type="text" ng-model="auth.payload.email"/>
+                                        <label for="email">Email</label>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <input id="password" type="password" ng-model="auth.payload.password"/>
+                                        <label for="password">Password</label>
+                                    </div>
+
+                                <input type="submit" value="Login" class="waves-effect waves-light btn" id="loginButton">
+                                <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
+                            </form>
+                    </div>
+                </div>
+
+            <!--Register view-->
+                <div id="test2" class="col s12">
+                    <div id="register" role="tabpanel" class="tab-pane">
+                            <form ng-submit="auth.register.submit($event)">
+                                <h1>Register</h1>
+
+                                        <div class="input-field">
+                                            <input id="name" type="text" ng-model="auth.payload.name"/>
+                                            <label for="name">Name</label>
+                                        </div>
+
+                                        <div class="input-field">
+                                            <input id="email" type="text" ng-model="auth.payload.email"/>
+                                            <label for="email">Email</label>
+                                        </div>
+
+                                        <div class="input-field">
+                                            <input id="password" type="password" ng-model="auth.payload.password"/>
+                                            <label for="password">Password</label>
+                                        </div>
+
+                                <button class="waves-effect waves-light btn" type="submit" id="registerButton">Register</button>
+                                <p ng-class="auth.register.alert">{{ auth.register.message }}</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

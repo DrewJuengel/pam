@@ -1,0 +1,28 @@
+html {
+    background-color: #e0e0e0;
+}
+
+body {
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+#mainHomeButton {
+    background-color: #2aba1a;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#mainHomeButton:hover {
+    background-color: #219b14
+}
+
+#authCard2 {
+    float: none;
+    margin: 0 auto;
+}
+
+.alert {
+    margin: 20px 0;
+}

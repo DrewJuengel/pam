@@ -1,0 +1,43 @@
+html {
+    background-color: #e0e0e0
+}
+body {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.nav-wrapper {
+    background-color: #2c7de8;
+}
+
+#navButtonHome {
+    width: 140px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#taskCard {
+    float: none;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+#test2 {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#navButtonLogout {
+    font-size: 20px;
+    width: 140px;
+    text-align: center;
+}
+
+.card .card-content {
+    padding: 20px;
+}
+
+form {
+    padding-top: 50px;
+}
